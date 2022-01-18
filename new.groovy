@@ -15,6 +15,12 @@ import com.atlassian.jira.bc.projectroles.ProjectRoleService
 import com.atlassian.jira.security.roles.ProjectRoleActor
 import com.atlassian.jira.util.SimpleErrorCollection
 import com.atlassian.jira.security.roles.ProjectRoleManager
+import com.atlassian.jira.jql.builder.JqlQueryBuilder
+import com.atlassian.jira.issue.search.SearchRequest
+import com.atlassian.jira.issue.search.SearchResults
+import com.atlassian.jira.web.bean.PagerFilter
+import com.atlassian.jira.issue.search.SearchProvider
+import com.onresolve.jira.groovy.canned.workflow.postfunctions.CloneIssue
 
 
 
