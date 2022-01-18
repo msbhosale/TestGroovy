@@ -101,3 +101,37 @@ def copyProject(String projectKey){
     log.warn('Creating new project in Copy Project Function')
     log.warn('With key : '+projectKey)
 }
+
+/*
+
+def componentManager = ComponentManager.getInstance()
+            def issueManager = componentManager.getIssueManager()
+            JqlQueryBuilder builder = JqlQueryBuilder.newBuilder()
+            def query = builder.where().project(srcProject.id).buildQuery()
+            SearchRequest sr = new SearchRequest(query)
+            SearchProvider searchProvider = componentManager.getSearchProvider()
+            SearchResults results = searchProvider.search(sr.getQuery(), componentManager.getJiraAuthenticationContext().getUser(), PagerFilter.getUnlimitedFilter())
+
+            results.issues.each {documentIssue ->
+
+                log.debug("Copy issue: ${documentIssue.key}")
+                def issue = issueManager.getIssueObject(documentIssue.id)
+                if (issue) {
+                    // Use clone issue but with no link type
+                    Map<String, Object> inputs = [
+                            issue: issue,
+                            (CloneIssue.FIELD_TARGET_PROJECT): newprojectObj.key,
+                            (CloneIssue.FIELD_LINK_TYPE): null,
+                    ] as Map<String, Object>
+                    log.debug ("inputs: $inputs")
+
+                    new CloneIssue().doScript(inputs)
+                }
+                else {
+                    // in test the issue can sometimes be null for some reason...
+                    log.warn "Null issue found."
+                }
+            }
+
+
+*/
